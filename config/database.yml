@@ -21,7 +21,7 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: shopify_app
-  password: password1
+  password: <%= ENV['SHOPIFY_APP_DATABASE_PASSWORD'] %>
 
 development:
   <<: *default
