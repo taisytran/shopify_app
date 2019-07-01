@@ -34,3 +34,11 @@ Things you may want to cover:
     ```
     bundle exec rails db:migrate # migrate new schema
     ```
+    
+* Result Case study
+
+![result1](result1.png)
+
+![result1](result2.png)
+
+![result1](result3.png)
