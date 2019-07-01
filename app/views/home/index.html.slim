@@ -1,24 +1,30 @@
 - content_for :javascript do
   script[type="text/javascript"]
     |  ShopifyApp.ready(function(){ ShopifyApp.Bar.initialize({ title: "Home" }); });
-h2
-  | Products
+div
+  span
+    = link_to 'Product Management', product_managements_path
+  span style="padding-left: 50px;"
+    = link_to 'Go to Shopify store', 'https://mystorestai.myshopify.com/'
+  span style="padding-left: 50px;"
+    = link_to 'Log out', 'logout'
+
+h3
+  | Shopify Product Admin Page
 ul
   - @products.each do |product|
     li
       = link_to product.title, "https://#{@shop_session.domain}/admin/products/#{product.id}", target: "_top"
 hr
-h2
-  | Webhooks
-- if @webhooks.present?
-  ul
-    - @webhooks.each do |webhook|
-      li
-        = webhook.topic
-        |  :
-        = webhook.address
-- else
-  p
-    | This app has not created any webhooks for this Shop. Add webhooks to your ShopifyApp initializer if you need webhooks
-
-= link_to 'Log out', 'logout'
+/ h2
+/   | Webhooks
+/ - if @webhooks.present?
+/   ul
+/     - @webhooks.each do |webhook|
+/       li
+/         = webhook.topic
+/         |  :
+/         = webhook.address
+/ - else
+/   p
+/     | This app has not created any webhooks for this Shop. Add webhooks to your ShopifyApp initializer if you need webhooks
