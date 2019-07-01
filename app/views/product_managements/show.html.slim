@@ -1,5 +1,8 @@
 p#notice = notice
 
+h1
+  | Show product information ID: #{@product.id}
+
 p= @product.title
 
 => link_to 'Edit', edit_product_management_path(@product)
