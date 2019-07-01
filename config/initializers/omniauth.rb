@@ -17,5 +17,11 @@ provider :shopify,
 
     strategy.options[:client_options][:site] = shop
     strategy.options[:old_client_secret] = ShopifyApp.configuration.old_secret
+    # customize callback url here, refer here
+    # /Users/taitran/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/shopify_app-10.0.0/app/controller/
+    # strategy.options[:callback_url] = ''
   }
+  # https://github.com/omniauth/omniauth-oauth2/issues/95
+  # FIXME: /Users/taitran/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/omniauth-shopify-oauth2-2.1.0/test/
+  # provider_ignores_state: true
 end
